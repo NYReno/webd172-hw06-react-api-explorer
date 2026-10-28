@@ -1,0 +1,89 @@
+/* Container layout and spacing */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  background: #d8d6d6;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+.app-header {
+  margin-bottom: 24px;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.app-header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.list-controls {
+  display: flex;
+  flex-direction: column; /* Stacks the two rows vertically */
+  gap: 2px; /* Sets equal spacing between the rows */
+  align-items: flex-start; /* Aligns the rows to the left (instead of center) */
+  margin-bottom: 15px;
+  padding: 12px 0px;
+  background: #efefcc;
+}
+
+.searchControl {
+  display: flex; /* Turns the row into a flex container */
+  flex-direction: row; /* Puts label and input side-by-side */
+  align-items: left; /* Centers label text and input vertically */
+  gap: 15px; /* Sets the gap between label and input */
+  width: 100%; /* Ensures the row takes full available width */
+}
+
+/* Force both labels to occupy the exact same horizontal space */
+.searchControl label {
+  display: inline-block;
+  width: 250px; /* Adjust this pixel value to fit your text perfectly */
+  flex-shrink: 0; /* Prevents the label text from crushing or wrapping */
+  text-align: right;
+}
+
+/* Vertical list layout for cards */
+.user-list {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 column on mobile */
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .user-list {
+    grid-template-columns: repeat(3, 1fr); /* Explicitly 3 columns */
+  }
+}
+
+/* Individual card styling matching the screenshot */
+.user-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.user-card h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 12px 0;
+}
+
+.user-card p {
+  margin: 6px 0;
+  color: #374151;
+  font-size: 0.95rem;
+}
